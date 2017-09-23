@@ -5,63 +5,63 @@ var tick = 0;
 var saying;
 var sketches = [0, 1, 2];
 var sayings = ["we want a sumptuous drizzling please",
-              // "just cooking up a nice batch of sabotage",
-              // "oil separation is normal",
-              // "hey there, sexy garden gnome",
-              // "you bet your garden",
-              // "The Punch is Dry WTF How Is That Possible",
-              // "do you... want to go to the Prom with me? no pressure",
-              // "garden hoe",
-              // "who's that hottie over by the hydrangeas???",
+              "just cooking up a nice batch of sabotage",
+              "oil separation is normal",
+              "hey there, sexy garden gnome",
+              "you bet your garden",
+              "The Punch is Dry WTF How Is That Possible",
+              "do you... want to go to the Prom with me? no pressure",
+              "garden hoe",
+              "who's that hottie over by the hydrangeas???",
               "april showers bring twitter followers",
               "swipe right for more",
               "what’s your favorite color",
               "do you have any siblings",
               "i can't stop thinking about toast",
               "Good evening nice to meet you unfortunately I can't stay for long because i don't want to be here",
-              // "i love making pickles, do you?",
-              // "i love your... muscular smile",
-              // "what's your ideal harvest season?",
-              // "Everyone Is Wearing Their Seatbelt But Its Like Behind Your Shoulder Which Isn't Very Safe",
-              // "your organic garden or mine?",
-              // "one-way ticket to flavortown",
-              // "We're All Crammed In The Backseat",
-              // "You Had A Nip Slip All Night And No One Told You Sorry",
-              // "game on, brotato",
-              // "why are these bees so muscular, what are they eating?",
-              // "you're like a, uh, sexy... flower pot",
-              // "hit em with that g! cal! invite!",
-              // "fill out a when2meet for my heart",
-              // "i think you're my... Swolemate",
-              // "existential dread and chill",
-              // "i am, objectively, so sweaty",
-              // "vulnerable and unbothered",
-              // "overcooked, but palatable",
-              // "what's your five year career plan?",
-              // "did you go to philips or exeter?",
-              // "hey, I like your zip-off pants",
-              // "wow you are dusty!!!",
-              // "seriously, why are you so dusty how does that happen",
-              // "ask the cutie before you touch the booty",
-              // "what's your alignment?",
-              // "it’s funny how slippery this jam is!",
-              // "i'm just not that into you",
-              // "what are you doing after this?",
-              // "i need to do some trimming",
-              // "mushrooms?",
-              // "it's tuber time",
-              // "sweet sweet nectar",
-              // "am i good enough now? is my dog good enough?",
-              // "endorse me on linkedin so i know it's real",
-              // "hot n juicy?",
-              // "sound the alarm",
-              // "i don't think about you",
-              // "we should hang out sometime?",
-              // "do you want to do.... Guy Stuff?",
-              // "rip vine and chill?",
-              // "haha, then what??",
-              // "you're like a sweet honeybee stinging my heart",
-              // "all natural horticultural hijinks",
+              "i love making pickles, do you?",
+              "i love your... muscular smile",
+              "what's your ideal harvest season?",
+              "Everyone Is Wearing Their Seatbelt But Its Like Behind Your Shoulder Which Isn't Very Safe",
+              "your organic garden or mine?",
+              "one-way ticket to flavortown",
+              "We're All Crammed In The Backseat",
+              "You Had A Nip Slip All Night And No One Told You Sorry",
+              "game on, brotato",
+              "why are these bees so muscular, what are they eating?",
+              "you're like a, uh, sexy... flower pot",
+              "hit em with that g! cal! invite!",
+              "fill out a when2meet for my heart",
+              "i think you're my... Swolemate",
+              "existential dread and chill",
+              "i am, objectively, so sweaty",
+              "vulnerable and unbothered",
+              "overcooked, but palatable",
+              "what's your five year career plan?",
+              "did you go to philips or exeter?",
+              "hey, I like your zip-off pants",
+              "wow you are dusty!!!",
+              "seriously, why are you so dusty how does that happen",
+              "ask the cutie before you touch the booty",
+              "what's your alignment?",
+              "it’s funny how slippery this jam is!",
+              "i'm just not that into you",
+              "what are you doing after this?",
+              "i need to do some trimming",
+              "mushrooms?",
+              "it's tuber time",
+              "sweet sweet nectar",
+              "am i good enough now? is my dog good enough?",
+              "endorse me on linkedin so i know it's real",
+              "hot n juicy?",
+              "sound the alarm",
+              "i don't think about you",
+              "we should hang out sometime?",
+              "do you want to do.... Guy Stuff?",
+              "rip vine and chill?",
+              "haha, then what??",
+              "you're like a sweet honeybee stinging my heart",
+              "all natural horticultural hijinks",
               "no one installs a fence post quite like you"];
 // Audio
 var prev = color(255, 255, 255, 255)
@@ -82,10 +82,6 @@ var t;
 // Video
 var vid;
 var gif;
-
-function preload(){
-	gif = loadImage("assets/vids/lotus_pinkpruple.gif")
-}
 
 function setup() {
 	initCanvas();
@@ -316,21 +312,20 @@ function drawBouncing() {
 	pop()
 }
 
-function initVid(){
-	// var path = 'assets/vids/lotus_pinkpurple';
-	// // var path = assetPath;//getURL().replace("index.html", assetPath);
-	// vid = createVideo([path+".mov", path +".mp4", path+".webm"])
-	// // vid.position(0, 0);
-	// // vid.play();
-	// vid.loop();
-  	// gif = loadImage(assets + '.gif');
+// function initVid(){
+// 	// var path = 'assets/vids/lotus_pinkpurple';
+// 	// // var path = assetPath;//getURL().replace("index.html", assetPath);
+// 	// vid = createVideo([path+".mov", path +".mp4", path+".webm"])
+// 	// // vid.position(0, 0);
+// 	// // vid.play();
+// 	// vid.loop();
+//   	// gif = loadImage(assets + '.gif');
 
-}
+// }
 
-function drawVid(){
-	// background(0);
-	image(gif, 0, 0);
-}
+// function drawVid(){
+// 	image(gif, 0, 0);
+// }
 
 function draw(){
 	// Randomly swap every 5 seconds
