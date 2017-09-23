@@ -312,10 +312,12 @@ function drawBouncing() {
 }
 
 function initVid(){
-	// var path = 'assets/vids/lotus_reg';
-	// // var path = assetPath;//getURL().replace("index.html", assetPath);
-	// vid = createVideo([path+".mov", path +".mp4", path+".webm"])
-	// vid.loop();
+	var path = 'assets/vids/lotus_reg';
+	// var path = assetPath;//getURL().replace("index.html", assetPath);
+	vid = createVideo([path+".mov", path +".mp4", path+".webm"])
+	vid.position(0, 0);
+	vid.play();
+	vid.loop();
 }
 
 function drawVid(){
