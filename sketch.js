@@ -81,6 +81,7 @@ var t;
 
 // Video
 var vid;
+var gif;
 
 function setup() {
 	initCanvas();
@@ -313,15 +314,18 @@ function drawBouncing() {
 
 function initVid(){
 	var path = 'assets/vids/lotus_pinkpurple';
-	// var path = assetPath;//getURL().replace("index.html", assetPath);
-	vid = createVideo([path+".mov", path +".mp4", path+".webm"])
-	// vid.position(0, 0);
-	// vid.play();
-	vid.loop();
+	// // var path = assetPath;//getURL().replace("index.html", assetPath);
+	// vid = createVideo([path+".mov", path +".mp4", path+".webm"])
+	// // vid.position(0, 0);
+	// // vid.play();
+	// vid.loop();
+  	gif = loadGif(assets + '.gif');
+
 }
 
 function drawVid(){
-	// background(255, 0, 0)
+	background(0);
+	image(gif, 0, 0);
 }
 
 function draw(){
@@ -359,7 +363,7 @@ function initNew(){
 
 function randomChange(){
 	sketch = sketches[getRandomInt(0, sketches.length-1)];
-	// sketch = 3;
+	sketch = 3;
     saying = sayings[getRandomInt(0, sayings.length-1)];
     initNew();
 }
