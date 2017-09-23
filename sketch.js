@@ -3,7 +3,7 @@ var mic;
 var FPS = 60;
 var tick = 0;
 var saying;
-var sketches = [0, 1, 2, 3];
+var sketches = [0, 1, 2];
 var sayings = ["we want a sumptuous drizzling please",
               // "just cooking up a nice batch of sabotage",
               // "oil separation is normal",
@@ -82,6 +82,10 @@ var t;
 // Video
 var vid;
 var gif;
+
+function preload(){
+	gif = loadImage("assets/vids/lotus_pinkpruple.gif")
+}
 
 function setup() {
 	initCanvas();
@@ -313,18 +317,18 @@ function drawBouncing() {
 }
 
 function initVid(){
-	var path = 'assets/vids/lotus_pinkpurple';
+	// var path = 'assets/vids/lotus_pinkpurple';
 	// // var path = assetPath;//getURL().replace("index.html", assetPath);
 	// vid = createVideo([path+".mov", path +".mp4", path+".webm"])
 	// // vid.position(0, 0);
 	// // vid.play();
 	// vid.loop();
-  	gif = loadGif(assets + '.gif');
+  	// gif = loadImage(assets + '.gif');
 
 }
 
 function drawVid(){
-	background(0);
+	// background(0);
 	image(gif, 0, 0);
 }
 
