@@ -345,6 +345,7 @@ function draw(){
 }
 
 function initNew(){
+	clear()
 	if (sketch == 0){
 		initBlob();
 	}else if (sketch == 1){
