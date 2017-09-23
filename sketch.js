@@ -92,12 +92,12 @@ function setup() {
 
     tick = 0;
 
-	randomChange();
-
 	initAudio();
 	initBouncing();
 	initBlob();
 	initVid();
+	randomChange();
+}
 
 function initCanvas(){
 	var canvas = createCanvas(windowWidth, windowHeight, P2D);
@@ -342,7 +342,7 @@ function draw(){
 	}else if (sketch == 2){
 		drawBouncing();
 	}else if (sketch == 3){
-		drawVid();
+		drawVid()
 	}
 
 	tick += 1;
