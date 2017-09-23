@@ -328,8 +328,8 @@ function drawBouncing() {
 // }
 
 function draw(){
-	// Randomly swap every 5 seconds
-	if (tick == (60*5)){
+	// Randomly swap every 15 seconds
+	if (tick == (60*15)){
 		clear();
 		randomChange();
 		tick = 0;
