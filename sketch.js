@@ -96,7 +96,7 @@ function setup() {
 	initAudio();
 	initBouncing();
 	initBlob();
-}
+	initVid();
 
 function initCanvas(){
 	var canvas = createCanvas(windowWidth, windowHeight, P2D);
@@ -312,7 +312,7 @@ function drawBouncing() {
 }
 
 function initVid(){
-	var path = 'https://ckendo.github.io/vzls/assets/vids/lotus_pinkpurple';
+	var path = 'assets/vids/lotus_pinkpurple';
 	// var path = assetPath;//getURL().replace("index.html", assetPath);
 	vid = createVideo([path+".mov", path +".mp4", path+".webm"])
 	// vid.position(0, 0);
@@ -359,7 +359,7 @@ function initNew(){
 
 function randomChange(){
 	sketch = sketches[getRandomInt(0, sketches.length-1)];
-	sketch = 3;
+	// sketch = 3;
     saying = sayings[getRandomInt(0, sayings.length-1)];
     initNew();
 }
