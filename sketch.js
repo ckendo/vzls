@@ -363,7 +363,6 @@ function initNew(){
 
 function randomChange(){
 	sketch = sketches[getRandomInt(0, sketches.length-1)];
-	sketch = 3;
     saying = sayings[getRandomInt(0, sayings.length-1)];
     initNew();
 }
