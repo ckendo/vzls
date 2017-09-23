@@ -95,7 +95,7 @@ function setup() {
 	initAudio();
 	initBouncing();
 	initBlob();
-	initVid();
+	// initVid();
 	randomChange();
 }
 
