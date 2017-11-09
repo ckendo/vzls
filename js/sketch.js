@@ -5,10 +5,11 @@ var tick = 0;
 var img1;
 var img2;
 var img3;
+var background_color;
 var img4;
 var img5;
 var saying;
-var sketches = [0, 1, 2, 3];
+var sketches = [0, 1, 2, 3, 4];
 var sayings = [
               "The Punch is Dry WTF How Is That Possible",
               "swipe right for more",
@@ -120,6 +121,26 @@ var randB;
 // Bouncing
 var x = 180;
 var y = 180;
+var x1;
+var x2;
+var x3;
+var x4;
+var x5;
+var y1;
+var y2;
+var y3;
+var y4;
+var y5;
+var xspeed1;
+var xspeed2;
+var xspeed3;
+var xspeed4;
+var xspeed5;
+var yspeed1;
+var yspeed2;
+var yspeed3;
+var yspeed4;
+var yspeed5;
 var xspeed = 2;
 var yspeed = 2;
 
@@ -143,6 +164,7 @@ function setup() {
 	initBouncing();
 	initBlob();
 	initSucc();
+	initStranger();
 	// initVid();
 	randomChange();
 }
@@ -376,23 +398,42 @@ function drawBouncing() {
 
 function preload()
 {
-	// img1 = loadImage("https://static01.nyt.com/images/2017/11/02/opinion/02thu2/02thu2-blogSmallThumb.jpg");
-	// img2 = loadImage("2.png");
-	// img3 = loadImage("3.png");
-	// img4 = loadImage("4.png");
-	// img5 = loadImage("5.png");
+	img1 = loadImage("https://ckendo.github.io/vzls/js/1.png");
+	img2 = loadImage("https://ckendo.github.io/vzls/js/2.png");
+	img3 = loadImage("https://ckendo.github.io/vzls/js/3.png");
+	img4 = loadImage("https://ckendo.github.io/vzls/js/4.png");
+	img5 = loadImage("https://ckendo.github.io/vzls/js/5.png");
 }
 
 function initSucc(){
-	background(random(10, 30), random(10, 30), random(10, 30));
 
-	x = 180;
-	y = 180;
-	xspeed = 2;
-	yspeed = 2;
+	background_color = color(random(10, 70), random(10, 70), random(10, 70));
+
+	x1 = 100;
+	y1 = 400;
+	x2 = 600;
+	y2 = 400;
+	x3 = 100;
+	y3 = 100;
+	x4 = 600;
+	y4 = 100;
+	x5 = 600;
+	y5 = 600;
+
+	xspeed1 = 2;
+	yspeed1 = 2;
+	xspeed2 = 2.1;
+	yspeed2 = -2.1;
+	xspeed3 = 1.5;
+	yspeed3 = 1.5;
+	xspeed4 = -1.8;
+	yspeed4 = -1.8;
+	xspeed5 = -2.2;
+	yspeed5 = 2.2;
 }
 
 function drawSucc() {
+	background(background_color)
 	// background(255, 0, 0);
 	// textFont("Baskerville")
 	// textSize(windowHeight/15);
@@ -400,7 +441,6 @@ function drawSucc() {
 	// textAlign(CENTER, CENTER)
 	// text(saying, windowWidth/2, windowHeight/2);
 
-	image(img1, windowWidth/2, windowHeight/2);
 	noStroke()
 
 	//distance from center of the screen
@@ -418,43 +458,143 @@ function drawSucc() {
 	// image(img1, windowWidth/2, windowHeight/2);
 
 	push()
-	translate(x, y)
-	// image(img1, 0, 0);
-	// ellipse(0, 0, d, d);
+	translate(x1, y1)
+	image(img1, 0, 0, windowWidth/2, windowWidth/4);
 	pop()
 
-	//bouncing horizontally
-	x = x + xspeed;
+	push()
+	translate(x2, y2)
+	image(img2, 0, 0, windowWidth/2, windowWidth/4);
+	pop();
 
-	if (x > windowWidth || x < 0)  {
-		xspeed = -xspeed;
+	push()
+	translate(x3, y3)
+	image(img3, 0, 0, windowWidth/2, windowWidth/4);
+	pop();
+
+	push()
+	translate(x4, y4)
+	image(img4, 0, 0, windowWidth/2, windowWidth/4);
+	pop();
+
+	push()
+	translate(x5, y5)
+	image(img5, 0, 0, windowWidth/2, windowWidth/4);
+	pop();
+
+	//bouncing horizontally
+	x1 = x1 + xspeed1;
+
+	if (x1 > windowWidth || x1 < 0)  {
+		xspeed1 = -xspeed1;
 	}
 
 	//bouncing veritcally
-	y = y + yspeed;
+	y1 = y1 + yspeed1;
 
-	if (y > windowHeight || y < 0) {
-		yspeed = -yspeed;
+	if (y1 > windowHeight || y1 < 0) {
+		yspeed1 = -yspeed1;
 	}
 
-	push()
-	textFont("Arial");
-	textSize(50);
-	fill(100);
-	textAlign(CENTER, CENTER);
-	text(saying, (windowWidth/4)-2, (windowHeight/4)+2, windowWidth/2, windowHeight/2)
-  	// text(saying, (-windowWidth/2)-2, (-windowHeight/2)+2, windowWidth/2, windowHeight/2);
+	x2 = x2 + xspeed2;
 
+	if (x2 > windowWidth || x2 < 0)  {
+		xspeed2 = -xspeed2;
+	}
+
+	//bouncing veritcally
+	y2 = y2 + yspeed2;
+
+	if (y2 > windowHeight || y2 < 0) {
+		yspeed2 = -yspeed2;
+	}
+
+	x3 = x3 + xspeed3;
+
+	if (x3 > windowWidth || x3 < 0)  {
+		xspeed3 = -xspeed3;
+	}
+
+	//bouncing veritcally
+	y3= y3 + yspeed3;
+
+	if (y3 > windowHeight || y3 < 0) {
+		yspeed3 = -yspeed3;
+	}
+
+	x4 = x4 + xspeed4;
+
+	if (x4 > windowWidth || x4 < 0)  {
+		xspeed4 = -xspeed4;
+	}
+
+	//bouncing veritcally
+	y4 = y4 + yspeed4;
+
+	if (y4 > windowHeight || y4 < 0) {
+		yspeed4 = -yspeed4;
+	}
+
+	x5 = x5 + xspeed5;
+
+	if (x5 > windowWidth || x5 < 0)  {
+		xspeed5 = -xspeed5;
+	}
+
+	//bouncing veritcally
+	y5 = y5 + yspeed5;
+
+	if (y5 > windowHeight || y5 < 0) {
+		yspeed5 = -yspeed5;
+	}
+
+
+
+	// push()
+	// textFont("Arial");
+	// textSize(d/6);
+	// fill(100);
+	// textAlign(CENTER, CENTER);
+	// text(saying, (windowWidth/4)-2, (windowHeight/4)+2, windowWidth/2, windowHeight/2)
+	// // text(saying, -d-2, (-d/2)+2, d*2, d);
+ //  	// text(saying, (-windowWidth/2)-2, (-windowHeight/2)+2, windowWidth/2, windowHeight/2);
+
+	// pop()
+
+	// push()
+	// textFont("Arial");
+	// textSize(d/6);
+	// fill(255);
+	// textAlign(CENTER, CENTER);
+	// text(saying, windowWidth/4, windowHeight/4, windowWidth/2, windowHeight/2)
+	// // text(saying, -d, -d/2, d*2, d);
+
+ //  	// text(saying, -windowWidth/2, -windowHeight/2, windowWidth/2, windowHeight/2);
+	// pop()
+}
+
+function initStranger(){
+	background(random(200, 250), random(200, 250), random(200, 250));
+}
+
+function drawStranger() {
+	// Get the overall volume (between 0 and 1.0)
+	var vol = mic.getLevel();
+
+	// Draw an ellipse with height based on volume
+	var h = map(vol, 0, 1, height/2, 0);
+	translate(windowWidth/2, windowHeight/2);
+	noStroke();
+
+	push()
+	fill(randR, randG, randB, 40);
+	rotate(radians(frameCount)/12)
+	for (var i = 0; i < 10; i ++) {
+		rect(0, 30, h, h);
+		rotate(PI/5);// +radians(frameCount)/10)
+	}
 	pop()
 
-	push()
-	textFont("Arial");
-	textSize(50);
-	fill(255);
-	textAlign(CENTER, CENTER);
-	text(saying, windowWidth/4, windowHeight/4, windowWidth/2, windowHeight/2)
-  	// text(saying, -windowWidth/2, -windowHeight/2, windowWidth/2, windowHeight/2);
-	pop()
 }
 
 // function initVid(){
@@ -487,9 +627,11 @@ function draw(){
 	// 	drawBouncing();
 	// }else if (sketch == 3){
 	// 	drawSucc()
+	// }else if (sketch == 4){
+	// 	drawStranger()
 	// }
 
-	drawBlob();
+	drawSucc();
 
 	tick += 1;
 }
@@ -504,6 +646,8 @@ function initNew(){
 		initBouncing();
 	}else if (sketch == 3){
 		initSucc();
+	}else if (sketch == 4){
+		initStranger();
 	}
 }
 
