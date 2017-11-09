@@ -377,7 +377,6 @@ function drawBouncing() {
 function preload()
 {
 	// img1 = loadImage("https://static01.nyt.com/images/2017/11/02/opinion/02thu2/02thu2-blogSmallThumb.jpg");
-	img1 = loadImage("1.png");
 	// img2 = loadImage("2.png");
 	// img3 = loadImage("3.png");
 	// img4 = loadImage("4.png");
@@ -490,7 +489,7 @@ function draw(){
 	// 	drawSucc()
 	// }
 
-	drawSucc();
+	drawBlob();
 
 	tick += 1;
 }
