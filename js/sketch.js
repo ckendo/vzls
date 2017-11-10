@@ -8,6 +8,8 @@ var img3;
 var background_color;
 var img4;
 var img5;
+var imgsucc;
+var imgstranger;
 var saying;
 var sketches = [0, 1, 2, 3, 4];
 var sayings = [
@@ -165,7 +167,6 @@ function setup() {
 	initBlob();
 	initSucc();
 	initStranger();
-	// initVid();
 	randomChange();
 }
 
@@ -249,6 +250,13 @@ function drawAudio() {
 
 	textFont("Arial")
 	textSize(h/6);
+	fill(50, 50, 50)
+	textAlign(CENTER, CENTER)
+	// text(saying, -windowWidth/2 + ((windowWidth/2)/2), -windowHeight/2 + ((windowHeight/2)/2), windowWidth/2, windowHeight/2);
+	text(saying, -h-2, -h/2+2, h*2, h);
+
+	textFont("Arial")
+	textSize(h/6);
 	fill(255, 255, 255)
 	textAlign(CENTER, CENTER)
 	// text(saying, -windowWidth/2 + ((windowWidth/2)/2), -windowHeight/2 + ((windowHeight/2)/2), windowWidth/2, windowHeight/2);
@@ -328,7 +336,7 @@ function drawBlob() {
 }
 
 function initBouncing(){
-	background(random(10, 30), random(10, 30), random(10, 30));
+	background(random(160, 200), random(160, 200), random(160, 200));
 	x = 180;
 	y = 180;
 	xspeed = 2;
@@ -349,7 +357,7 @@ function drawBouncing() {
 	var vol = mic.getLevel();
 	var d = map(vol, 0, 1, windowHeight/3, 0);
 
-	fill (random(200, 250), random(200, 250), random(200, 250));
+	fill (random(80, 150), random(80, 150), random(80, 150));
 	// push()
 	// translate(x, y)
 	// for (var i = 0; i < 10; i ++) {
@@ -403,6 +411,9 @@ function preload()
 	img3 = loadImage("https://ckendo.github.io/vzls/js/3.png");
 	img4 = loadImage("https://ckendo.github.io/vzls/js/4.png");
 	img5 = loadImage("https://ckendo.github.io/vzls/js/5.png");
+	imgsucc = loadImage("https://ckendo.github.io/vzls/js/succ.png");
+	imgstranger = loadImage("https://ckendo.github.io/vzls/js/stranger.png");
+
 }
 
 function initSucc(){
@@ -578,21 +589,26 @@ function initStranger(){
 }
 
 function drawStranger() {
+	background(0)
+	// if (frameCount % 100 == 0){
+	// 	prev = next;
+	// 	// next = color(random(180, 250), random(180, 250), random(180, 250))
+	// 	next = color(random(200, 250), random(200, 250), random(200, 250));
+	// }
 	// Get the overall volume (between 0 and 1.0)
 	var vol = mic.getLevel();
 
-	// Draw an ellipse with height based on volume
-	var h = map(vol, 0, 1, height/2, 0);
-	translate(windowWidth/2, windowHeight/2);
+	var h = map(vol, 0, 1, windowHeight/2, 0);
 	noStroke();
 
 	push()
-	fill(randR, randG, randB, 40);
-	rotate(radians(frameCount)/12)
-	for (var i = 0; i < 10; i ++) {
-		rect(0, 30, h, h);
-		rotate(PI/5);// +radians(frameCount)/10)
-	}
+	image(imgstranger, -h/4,- h/4, windowWidth + h/2, windowHeight + h/2)
+	// fill(randR, randG, randB, 40);
+	// rotate(radians(frameCount)/12)
+	// for (var i = 0; i < 10; i ++) {
+	// 	rect(0, 30, h, h);
+	// 	rotate(PI/5);// +radians(frameCount)/10)
+	// }
 	pop()
 
 }
@@ -614,24 +630,23 @@ function drawStranger() {
 
 function draw(){
 	// Randomly swap every 15 seconds
-	// if (tick == (60*15)){
-	// 	clear();
-	// 	randomChange();
-	// 	tick = 0;
-	// }
-	// if (sketch == 0){
-	// 	drawBlob();
-	// }else if (sketch == 1){
-	// 	drawAudio();
-	// }else if (sketch == 2){
-	// 	drawBouncing();
-	// }else if (sketch == 3){
-	// 	drawSucc()
-	// }else if (sketch == 4){
-	// 	drawStranger()
-	// }
+	if (tick == (60*15)){
+		clear();
+		randomChange();
+		tick = 0;
+	}
+	if (sketch == 0){
+		drawBlob();
+	}else if (sketch == 1){
+		drawAudio();
+	}else if (sketch == 2){
+		drawBouncing();
+	}else if (sketch == 3){
+		drawSucc()
+	}else if (sketch == 4){
+		drawStranger()
+	}
 
-	drawSucc();
 
 	tick += 1;
 }
