@@ -16,6 +16,10 @@ var sayings = [
               "The Punch is Dry WTF How Is That Possible",
               "swipe right for more",
               "what’s your favorite color",
+              "not with THAT attitude",
+              "not on MY watch",
+              "men? in this economy?",
+              "so uh,,, what are we?",
               "do you have any siblings",
               "i can't stop thinking about toast",
               "Everyone Is Wearing Their Seatbelt But Its Like Behind Your Shoulder Which Isn't Very Safe",
@@ -420,16 +424,16 @@ function initSucc(){
 
 	background_color = color(random(10, 70), random(10, 70), random(10, 70));
 
-	x1 = 100;
-	y1 = 400;
-	x2 = 600;
-	y2 = 400;
-	x3 = 100;
-	y3 = 100;
-	x4 = 600;
-	y4 = 100;
-	x5 = 600;
-	y5 = 600;
+	x1 = random(0, windowWidth);
+	y1 = random(0, windowHeight);
+	x2 = random(0, windowWidth);
+	y2 = random(0, windowHeight);
+	x3 = random(0, windowWidth);
+	y3 = random(0, windowHeight);
+	x4 = random(0, windowWidth);
+	y4 = random(0, windowHeight);
+	x5 = random(0, windowWidth);
+	y5 = random(0, windowHeight);
 
 	xspeed1 = 2;
 	yspeed1 = 2;
