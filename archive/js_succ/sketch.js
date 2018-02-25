@@ -5,69 +5,125 @@ var tick = 0;
 var img1;
 var img2;
 var img3;
+var background_color;
 var img4;
 var img5;
-var img6;
-var img7;
-var img8;
 var imgsucc;
-var background_color;
 var imgstranger;
 var saying;
-var sketches = [0, 1, 2, 3];
-var slides = [];
+var sketches = [0, 1, 2, 3, 4];
 var sayings = [
-			  "the lip smackers golden age / the lip smackers renaissance",
-              // "The Punch is Dry WTF How Is That Possible",
+              "The Punch is Dry WTF How Is That Possible",
               "swipe right for more",
               "what’s your favorite color",
-              "don't use ABBA's name in vain",
+              "knock loud, i'm home",
+              "im_not_qualified_for_your_entry_level_position.jpeg",
+              "not with THAT attitude",
+              "do you accept bitcoin?",
+              "not on MY watch",
+              "HAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAM",
+              "Adobe Creative Clout (CC) 2017",
+              "men? in this economy?",
+              "so uh,,, what are we?",
+              "do you have any siblings",
               "i can't stop thinking about toast",
               "Everyone Is Wearing Their Seatbelt But Its Like Behind Your Shoulder Which Isn't Very Safe",
-              // "We're All Crammed In The Backseat",
+              "We're All Crammed In The Backseat",
               "You Had A Nip Slip All Night And No One Told You Sorry",
               "game on, brotato",
+              "OKAY NO SPOILERS BUT WHEN WILL I STOP SCREAMING",
+              "succ.png",
               "fill out a when2meet for my heart",
               "what's your five year career plan?",
-              // "Open Face Apple Pie The Convertible of Apple Pies",
+              "Open Face Apple Pie The Convertible of Apple Pies",
               "wow you are dusty!!!",
-              "biddiness casual",
               "yeah, we met on brown connect",
+              "have you done the APMA yet",
+              "does anyone REALLY know what consulting is",
               "sweaty and not ready",
-              // "have you listened to enough ABBA today",
-              // "hit em with that good ol razzmatazz",
-              // "i lost my alt-pin",
-              // "eggs bacon grits SAUSAGE",
+              "that's showbiz, baby",
+              "have you listened to enough ABBA today",
+              "hit em with that good ol razzmatazz",
+              "M.A.S.H. and chill",
+              "i lost my alt-pin",
+              "eggs bacon grits SAUSAGE",
               "Sorry for Not Answering the Phone I'm Too Busy Trying to Fly Away",
               "seriously, why are you so dusty how does that happen",
               "am i good enough now? is my dog good enough?",
               "endorse me on linkedin so i know it's real",
-              // "I Need a Cup of Coffee and Some Bread to Wake Up",
+              "indict me daddy",
+              "may i have the succ pls",
+              "gimme the succ",
+              "succ me daddy",
+              "I Need a Cup of Coffee and Some Bread to Wake Up",
+              "280 is cool. miss vine tho",
+              "280 - 140 = 140",
               "do you have any siblings",
-              "do you want to do.... Guy Stuff?",
-              "rebate? more like rebae 😍",
-              "call me by your 401k",
-              "you've got a lovely pair of w-2s",
-              "let's commit tax fraud together",
-              "i'd love to amortize your discount on bonds payable",
-              "are you a 1040EZ? cause i need to fill you in",
-              "calc-you-later!",
-              "your ti-84 plus is really sexy",
-              "*points to your ti-84 plus* 'u got games on that thing?'",
-              "In my office, ‘I.R.S.’ stands for ‘I’m really sexy.",
-              "Beware This Incredibly Silly—But Still Effective—Tax Scam",
-              "The Biggest Tax Scam Ever",
-              "Listen, I'd love to sleep with you, but it's tax day and I feel like I've already been screwed by an entire government agency.",
-              "You know, my return this year was huge…like, huuuuge.",
-              "So do you file electronically around here often?",
-              "how do i file for my bitcoin assets",
-              "tax day, but make it kinky",
-              "tax cut more like tax slut",
-              "high strung, looking for same",
-              "It’s accrual world out there but I’m willing to invest in you",
-              "government slutdown",
-              "cryptocurrency daddy, looking for same",
+              "i'm taking our current social interaction S/NC",
+              "you need an instructor override for my heart",
+              "do you want to do.... Guy Stuff?"
               ];
+// var sayings = [
+// 			  // "we want a sumptuous drizzling please",
+//               // "just cooking up a nice batch of sabotage",
+//               // "oil separation is normal",
+//               // "hey there, sexy garden gnome",
+//               // "you bet your garden",
+//               "The Punch is Dry WTF How Is That Possible",
+//               // "do you... want to go to the Prom with me? no pressure",
+//               // "garden hoe",
+//               // "who's that hottie over by the hydrangeas???",
+//               // "april showers bring twitter followers",
+//               "swipe right for more",
+//               "what’s your favorite color",
+//               "do you have any siblings",
+//               "i can't stop thinking about toast",
+//               // "Good evening nice to meet you unfortunately I can't stay for long because i don't want to be here",
+//               // "i love making pickles, do you?",
+//               // "i love your... muscular smile",
+//               // "what's your ideal harvest season?",
+//               "Everyone Is Wearing Their Seatbelt But Its Like Behind Your Shoulder Which Isn't Very Safe",
+//               // "your organic garden or mine?",
+//               // "one-way ticket to flavortown",
+//               "We're All Crammed In The Backseat",
+//               "You Had A Nip Slip All Night And No One Told You Sorry",
+//               "game on, brotato",
+//               // "why are these bees so muscular, what are they eating?",
+//               // "you're like a, uh, sexy... flower pot",
+//               // "hit em with that g! cal! invite!",
+//               "fill out a when2meet for my heart",
+//               // "i think you're my... Swolemate",
+//               // "existential dread and chill",
+//               // "i am, objectively, so sweaty",
+//               // "vulnerable and unbothered",
+//               // "overcooked, but palatable",
+//               "what's your five year career plan?",
+//               // "did you go to philips or exeter?",
+//               // "hey, I like your zip-off pants",
+//               "wow you are dusty!!!",
+//               "seriously, why are you so dusty how does that happen",
+//               // "ask the cutie before you touch the booty",
+//               // "what's your alignment?",
+//               // "it’s funny how slippery this jam is!",
+//               // "i'm just not that into you",
+//               // "what are you doing after this?",
+//               // "i need to do some trimming",
+//               // "mushrooms?",
+//               // "it's tuber time",
+//               // "sweet sweet nectar",
+//               "am i good enough now? is my dog good enough?",
+//               "endorse me on linkedin so i know it's real",
+//               // "hot n juicy?",
+//               // "sound the alarm",
+//               // "i don't think about you",
+//               // "we should hang out sometime?",
+//               "do you want to do.... Guy Stuff?",
+//               // "rip vine and chill?",
+//               // "haha, then what??",
+//               // "you're like a sweet honeybee stinging my heart",
+//               // "all natural horticultural hijinks",
+//               // "no one installs a fence post quite like you"
+//               ];
 // Audio
 var prev = color(255, 255, 255, 255)
 var next = color(255, 255, 255, 255)
@@ -120,8 +176,8 @@ function setup() {
 	initAudio();
 	initBouncing();
 	initBlob();
-	// initSucc();
-	initSlides();
+	initSucc();
+	initStranger();
 	randomChange();
 }
 
@@ -203,14 +259,14 @@ function drawAudio() {
 	}
 	pop()
 
-	textFont("Palatino")
+	textFont("Arial")
 	textSize(h/6);
 	fill(50, 50, 50)
 	textAlign(CENTER, CENTER)
 	// text(saying, -windowWidth/2 + ((windowWidth/2)/2), -windowHeight/2 + ((windowHeight/2)/2), windowWidth/2, windowHeight/2);
 	text(saying, -h-2, -h/2+2, h*2, h);
 
-	textFont("Palatino")
+	textFont("Arial")
 	textSize(h/6);
 	fill(255, 255, 255)
 	textAlign(CENTER, CENTER)
@@ -272,7 +328,7 @@ function drawBlob() {
 	// }
 
 	push()
-	textFont("Palatino");
+	textFont("Arial");
 	textSize(50);
 	fill(100);
 	textAlign(CENTER, CENTER);
@@ -281,7 +337,7 @@ function drawBlob() {
 	pop()
 
 	push()
-	textFont("Palatino");
+	textFont("Arial");
 	textSize(50);
 	fill(255);
 	textAlign(CENTER, CENTER);
@@ -340,7 +396,7 @@ function drawBouncing() {
 	}
 
 	push()
-	textFont("Palatino");
+	textFont("Arial");
 	textSize(50);
 	fill(100);
 	textAlign(CENTER, CENTER);
@@ -350,7 +406,7 @@ function drawBouncing() {
 	pop()
 
 	push()
-	textFont("Palatino");
+	textFont("Arial");
 	textSize(50);
 	fill(255);
 	textAlign(CENTER, CENTER);
@@ -361,21 +417,14 @@ function drawBouncing() {
 
 function preload()
 {
-	img1 = loadImage("https://ckendo.github.io/vzls/js/slides/1.png");
-	img2 = loadImage("https://ckendo.github.io/vzls/js/slides/2.png");
-	img3 = loadImage("https://ckendo.github.io/vzls/js/slides/3.png");
-	img4 = loadImage("https://ckendo.github.io/vzls/js/slides/4.png");
-	img5 = loadImage("https://ckendo.github.io/vzls/js/slides/5.png");
-	img6 = loadImage("https://ckendo.github.io/vzls/js/slides/6.png");
-	img7 = loadImage("https://ckendo.github.io/vzls/js/slides/7.png");
+	img1 = loadImage("https://ckendo.github.io/vzls/js/1.png");
+	img2 = loadImage("https://ckendo.github.io/vzls/js/2.png");
+	img3 = loadImage("https://ckendo.github.io/vzls/js/3.png");
+	img4 = loadImage("https://ckendo.github.io/vzls/js/4.png");
+	img5 = loadImage("https://ckendo.github.io/vzls/js/5.png");
+	imgsucc = loadImage("https://ckendo.github.io/vzls/js/succ.png");
+	imgstranger = loadImage("https://ckendo.github.io/vzls/js/stranger.png");
 
-	slides.append(img1)
-	slides.append(img2)
-	slides.append(img3)
-	slides.append(img4)
-	slides.append(img5)
-	slides.append(img6)
-	slides.append(img7)
 }
 
 function initSucc(){
@@ -524,7 +573,7 @@ function drawSucc() {
 
 
 	// push()
-	// textFont("Palatino");
+	// textFont("Arial");
 	// textSize(d/6);
 	// fill(100);
 	// textAlign(CENTER, CENTER);
@@ -535,7 +584,7 @@ function drawSucc() {
 	// pop()
 
 	// push()
-	// textFont("Palatino");
+	// textFont("Arial");
 	// textSize(d/6);
 	// fill(255);
 	// textAlign(CENTER, CENTER);
@@ -546,11 +595,11 @@ function drawSucc() {
 	// pop()
 }
 
-function initSlides(){
+function initStranger(){
 	background(random(200, 250), random(200, 250), random(200, 250));
 }
 
-function drawSlides() {
+function drawStranger() {
 	background(0)
 	// if (frameCount % 100 == 0){
 	// 	prev = next;
@@ -563,10 +612,8 @@ function drawSlides() {
 	var h = map(vol, 0, 1, windowHeight/2, 0);
 	noStroke();
 
-	var slide = slides[getRandomInt(0, slides.length-1)];
-
 	push()
-	image(slide, -h/4,- h/4, windowWidth + h/2, windowHeight + h/2)
+	image(imgstranger, -h/4,- h/4, windowWidth + h/2, windowHeight + h/2)
 	// fill(randR, randG, randB, 40);
 	// rotate(radians(frameCount)/12)
 	// for (var i = 0; i < 10; i ++) {
@@ -594,25 +641,25 @@ function drawSlides() {
 
 function draw(){
 	// Randomly swap every 15 seconds
+	if (tick == (60*15)){
+		clear();
+		randomChange();
+		tick = 0;
+	}
+	if (sketch == 0){
+		drawBlob();
+	}else if (sketch == 1){
+		drawAudio();
+	}else if (sketch == 2){
+		drawBouncing();
+	}else if (sketch == 3){
+		drawSucc()
+	}else if (sketch == 4){
+		drawStranger()
+	}
 
-	drawSlides()
-	// if (tick == (60*15)){
-	// 	clear();
-	// 	randomChange();
-	// 	tick = 0;
-	// }
-	// if (sketch == 0){
-	// 	drawBlob();
-	// }else if (sketch == 1){
-	// 	drawAudio();
-	// }else if (sketch == 2){
-	// 	drawBouncing();
-	// }else if (sketch == 3){
-	// 	drawSlides()
-	// }
 
-
-	// tick += 1;
+	tick += 1;
 }
 
 function initNew(){
@@ -624,7 +671,9 @@ function initNew(){
 	}else if (sketch == 2){
 		initBouncing();
 	}else if (sketch == 3){
-		initSlides();
+		initSucc();
+	}else if (sketch == 4){
+		initStranger();
 	}
 }
 
