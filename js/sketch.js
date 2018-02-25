@@ -361,13 +361,13 @@ function drawBouncing() {
 
 function preload()
 {
-	img1 = loadImage("https://ckendo.github.io/vzls/js/slides/1.png");
-	img2 = loadImage("https://ckendo.github.io/vzls/js/slides/2.png");
-	img3 = loadImage("https://ckendo.github.io/vzls/js/slides/3.png");
-	img4 = loadImage("https://ckendo.github.io/vzls/js/slides/4.png");
-	img5 = loadImage("https://ckendo.github.io/vzls/js/slides/5.png");
-	img6 = loadImage("https://ckendo.github.io/vzls/js/slides/6.png");
-	img7 = loadImage("https://ckendo.github.io/vzls/js/slides/7.png");
+	img1 = loadImage("https://ckendo.github.io/vzls/js/slides/1.jpg");
+	img2 = loadImage("https://ckendo.github.io/vzls/js/slides/2.jpg");
+	img3 = loadImage("https://ckendo.github.io/vzls/js/slides/3.jpg");
+	img4 = loadImage("https://ckendo.github.io/vzls/js/slides/4.jpg");
+	img5 = loadImage("https://ckendo.github.io/vzls/js/slides/5.jpg");
+	img6 = loadImage("https://ckendo.github.io/vzls/js/slides/6.jpg");
+	img7 = loadImage("https://ckendo.github.io/vzls/js/slides/7.jpg");
 
 	slides.append(img1)
 	slides.append(img2)
