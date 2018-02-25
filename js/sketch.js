@@ -603,9 +603,9 @@ function draw(){
 		drawAudio();
 	}else if (sketch == 2){
 		drawBouncing();
-	// }else if (sketch == 3){
-	// 	drawSlides()
-	// }
+	}else if (sketch == 3){
+		drawSlides()
+	}
 
 
 	tick += 1;
@@ -619,9 +619,9 @@ function initNew(){
 		initAudio();
 	}else if (sketch == 2){
 		initBouncing();
-	// }else if (sketch == 3){
-	// 	initSlides();
-	// }
+	}else if (sketch == 3){
+		initSlides();
+	}
 }
 
 function randomChange(){
