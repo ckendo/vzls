@@ -14,6 +14,7 @@ var imgsucc;
 var background_color;
 var imgstranger;
 var saying;
+var slide;
 var sketches = [0, 1, 2, 3];
 var slides = [];
 var sayings = [
@@ -55,6 +56,7 @@ var sayings = [
               "your ti-84 plus is really sexy",
               "*points to your ti-84 plus* 'u got games on that thing?'",
               "In my office, ‘I.R.S.’ stands for ‘I’m really sexy.",
+              "Death and Taxes One-Liners Jokes - IRS Jokes",
               "Beware This Incredibly Silly—But Still Effective—Tax Scam",
               "The Biggest Tax Scam Ever",
               "Listen, I'd love to sleep with you, but it's tax day and I feel like I've already been screwed by an entire government agency.",
@@ -63,9 +65,12 @@ var sayings = [
               "how do i file for my bitcoin assets",
               "tax day, but make it kinky",
               "tax cut more like tax slut",
+              "Best 25+ Taxes humor ideas on Pinterest | Accounting humor ...",
+              "Tax Jokes and One Liners. Clean Short Good Bad.",
               "high strung, looking for same",
               "It’s accrual world out there but I’m willing to invest in you",
               "government slutdown",
+              "6 Solid Pick Up Lines To Use On An Accountant - Float Blog",
               "cryptocurrency daddy, looking for same",
               ];
 // Audio
@@ -368,14 +373,9 @@ function preload()
 	img5 = loadImage("https://ckendo.github.io/vzls/js/assets/slides/5.jpg");
 	img6 = loadImage("https://ckendo.github.io/vzls/js/assets/slides/6.jpg");
 	img7 = loadImage("https://ckendo.github.io/vzls/js/assets/slides/7.jpg");
+	img8 = loadImage("https://ckendo.github.io/vzls/js/assets/slides/8.jpg");
 
-	slides.append(img1)
-	slides.append(img2)
-	slides.append(img3)
-	slides.append(img4)
-	slides.append(img5)
-	slides.append(img6)
-	slides.append(img7)
+	slides = [img1, img2, img3, img4, img5, img6, img7, img8]
 }
 
 function initSucc(){
@@ -521,8 +521,6 @@ function drawSucc() {
 		yspeed5 = -yspeed5;
 	}
 
-
-
 	// push()
 	// textFont("Palatino");
 	// textSize(d/6);
@@ -547,11 +545,12 @@ function drawSucc() {
 }
 
 function initSlides(){
-	background(random(200, 250), random(200, 250), random(200, 250));
+	background(250, 250, 250);
+	slide = slides[getRandomInt(0, slides.length-1)];
 }
 
 function drawSlides() {
-	background(0)
+	background(250)
 	// if (frameCount % 100 == 0){
 	// 	prev = next;
 	// 	// next = color(random(180, 250), random(180, 250), random(180, 250))
@@ -563,10 +562,9 @@ function drawSlides() {
 	var h = map(vol, 0, 1, windowHeight/2, 0);
 	noStroke();
 
-	var slide = slides[getRandomInt(0, slides.length-1)];
-
 	push()
-	image(slide, -h/4,- h/4, windowWidth + h/2, windowHeight + h/2)
+	// image(slide, -h/4,- h/4, windowWidth + h/2, windowHeight + h/2)
+	image(slide, windowWidth/4 -h/4,windowHeight/4 - h/4, windowWidth/2 + h/2, windowHeight/2 + h/2)
 	// fill(randR, randG, randB, 40);
 	// rotate(radians(frameCount)/12)
 	// for (var i = 0; i < 10; i ++) {
@@ -594,25 +592,23 @@ function drawSlides() {
 
 function draw(){
 	// Randomly swap every 15 seconds
-
-	drawSlides()
-	// if (tick == (60*15)){
-	// 	clear();
-	// 	randomChange();
-	// 	tick = 0;
-	// }
-	// if (sketch == 0){
-	// 	drawBlob();
-	// }else if (sketch == 1){
-	// 	drawAudio();
-	// }else if (sketch == 2){
-	// 	drawBouncing();
-	// }else if (sketch == 3){
-	// 	drawSlides()
-	// }
+	if (tick == (60*15)){
+		clear();
+		randomChange();
+		tick = 0;
+	}
+	if (sketch == 0){
+		drawBlob();
+	}else if (sketch == 1){
+		drawAudio();
+	}else if (sketch == 2){
+		drawBouncing();
+	}else if (sketch == 3){
+		drawSlides()
+	}
 
 
-	// tick += 1;
+	tick += 1;
 }
 
 function initNew(){
