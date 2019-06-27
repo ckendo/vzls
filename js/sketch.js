@@ -484,10 +484,10 @@ function draw() {
 
 	translate(240, 0, 0);
 	push();
-	rotateZ(frameCount * 0.01);
-	rotateX(frameCount * 0.01);
-	rotateY(frameCount * 0.01);
-	box(70, 70, 70);
+	rotateZ(frameCount * 0.001);
+	rotateX(frameCount * 0.001);
+	rotateY(frameCount * 0.001);
+	box(70*h, 70*h, 70*h);
 	pop();
 
 	translate(240, 0, 0);
@@ -514,12 +514,12 @@ function draw() {
 	torus(70, 20);
 	pop();
 
-	translate(240, h, 0);
+	translate(240, sin(frameCount/50)*30, 100);
 	push();
 	rotateZ(frameCount * 0.01);
 	rotateX(frameCount * 0.01);
 	rotateY(frameCount * 0.01);
-	sphere(70);
+	sphere(h);
 	pop();
 }
 
