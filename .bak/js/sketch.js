@@ -19,8 +19,59 @@ var sketches = [0, 1, 2, 3];
 var slides = [];
 var sayings = [
 			  "the lip smackers golden age / the lip smackers renaissance",
+              // "The Punch is Dry WTF How Is That Possible",
               "swipe right for more",
               "what’s your favorite color",
+              "don't use ABBA's name in vain",
+              "i can't stop thinking about toast",
+              "Everyone Is Wearing Their Seatbelt But Its Like Behind Your Shoulder Which Isn't Very Safe",
+              // "We're All Crammed In The Backseat",
+              "You Had A Nip Slip All Night And No One Told You Sorry",
+              "game on, brotato",
+              "fill out a when2meet for my heart",
+              "what's your five year career plan?",
+              // "Open Face Apple Pie The Convertible of Apple Pies",
+              "wow you are dusty!!!",
+              "biddiness casual",
+              "yeah, we met on brown connect",
+              "sweaty and not ready",
+              // "have you listened to enough ABBA today",
+              // "hit em with that good ol razzmatazz",
+              // "i lost my alt-pin",
+              // "eggs bacon grits SAUSAGE",
+              "Sorry for Not Answering the Phone I'm Too Busy Trying to Fly Away",
+              "seriously, why are you so dusty how does that happen",
+              "am i good enough now? is my dog good enough?",
+              "endorse me on linkedin so i know it's real",
+              // "I Need a Cup of Coffee and Some Bread to Wake Up",
+              "do you have any siblings",
+              "do you want to do.... Guy Stuff?",
+              "rebate? more like rebae 😍",
+              "call me by your 401k",
+              "you've got a lovely pair of w-2s",
+              "let's commit tax fraud together",
+              "i'd love to amortize your discount on bonds payable",
+              "are you a 1040EZ? cause i need to fill you in",
+              "calc-you-later!",
+              "your ti-84 plus is really sexy",
+              "*points to your ti-84 plus* 'u got games on that thing?'",
+              "In my office, ‘I.R.S.’ stands for ‘I’m really sexy.",
+              "Death and Taxes One-Liners Jokes - IRS Jokes",
+              "Beware This Incredibly Silly—But Still Effective—Tax Scam",
+              "The Biggest Tax Scam Ever",
+              "Listen, I'd love to sleep with you, but it's tax day and I feel like I've already been screwed by an entire government agency.",
+              "You know, my return this year was huge…like, huuuuge.",
+              "So do you file electronically around here often?",
+              "how do i file for my bitcoin assets",
+              "tax day, but make it kinky",
+              "tax cut more like tax slut",
+              "Best 25+ Taxes humor ideas on Pinterest | Accounting humor ...",
+              "Tax Jokes and One Liners. Clean Short Good Bad.",
+              "high strung, looking for same",
+              "It’s accrual world out there but I’m willing to invest in you",
+              "government slutdown",
+              "6 Solid Pick Up Lines To Use On An Accountant - Float Blog",
+              "cryptocurrency daddy, looking for same",
               ];
 // Audio
 var prev = color(255, 255, 255, 255)
@@ -74,12 +125,13 @@ function setup() {
 	initAudio();
 	initBouncing();
 	initBlob();
+	// initSucc();
+	initSlides();
 	randomChange();
 }
 
 function initCanvas(){
-	var canvas =   createCanvas(windowWidth, windowHeight, WEBGL);
-// createCanvas(windowWidth, windowHeight, P2D);
+	var canvas = createCanvas(windowWidth, windowHeight, P2D);
 	canvas.parent('sketch');
 	frameRate(FPS);
 }
@@ -183,6 +235,12 @@ function initBlob(){
 }
 
 function drawBlob() {
+	// background(0, 255, 0);
+	// textFont("Baskerville")
+	// textSize(windowHeight/15);
+	// fill(255, 255, 255)
+	// textAlign(CENTER, CENTER)
+	// text(saying, windowWidth/2, windowHeight/2);
 
 	var vol = mic.getLevel();
 	var d = map(vol, 0, 1, height*0.67, 0);
@@ -212,6 +270,12 @@ function drawBlob() {
 
 	t += 1;
 
+	// // clear the background every 600 frames using mod (%) operator
+	// if (frameCount % 600 == 0) {
+	// 	nextBlobColor = color(random(180, 250), random(180, 250), random(180, 250))
+	// 	background(nextBlobColor)
+	// }
+
 	push()
 	textFont("Palatino");
 	textSize(50);
@@ -240,6 +304,12 @@ function initBouncing(){
 }
 
 function drawBouncing() {
+	// background(255, 0, 0);
+	// textFont("Baskerville")
+	// textSize(windowHeight/15);
+	// fill(255, 255, 255)
+	// textAlign(CENTER, CENTER)
+	// text(saying, windowWidth/2, windowHeight/2);
 
 	noStroke()
 
@@ -248,6 +318,13 @@ function drawBouncing() {
 	var d = map(vol, 0, 1, windowHeight/3, 0);
 
 	fill (random(80, 150), random(80, 150), random(80, 150));
+	// push()
+	// translate(x, y)
+	// for (var i = 0; i < 10; i ++) {
+	// 	ellipse(0, 30, d/4, d);
+	// 	rotate(PI/5);// +radians(frameCount)/10)
+	// }
+	// pop()
 	push()
 	translate(x, y)
 	ellipse(0, 0, d, d);
@@ -330,12 +407,28 @@ function initSucc(){
 
 function drawSucc() {
 	background(background_color)
+	// background(255, 0, 0);
+	// textFont("Baskerville")
+	// textSize(windowHeight/15);
+	// fill(255, 255, 255)
+	// textAlign(CENTER, CENTER)
+	// text(saying, windowWidth/2, windowHeight/2);
 
 	noStroke()
 
 	//distance from center of the screen
 	var vol = mic.getLevel();
 	var d = map(vol, 0, 1, windowHeight/3, 0);
+
+	// fill (random(200, 250), random(200, 250), random(200, 250));
+	// push()
+	// translate(x, y)
+	// for (var i = 0; i < 10; i ++) {
+	// 	ellipse(0, 30, d/4, d);
+	// 	rotate(PI/5);// +radians(frameCount)/10)
+	// }
+	// pop()
+	// image(img1, windowWidth/2, windowHeight/2);
 
 	push()
 	translate(x1, y1)
@@ -427,6 +520,28 @@ function drawSucc() {
 	if (y5 > windowHeight || y5 < 0) {
 		yspeed5 = -yspeed5;
 	}
+
+	// push()
+	// textFont("Palatino");
+	// textSize(d/6);
+	// fill(100);
+	// textAlign(CENTER, CENTER);
+	// text(saying, (windowWidth/4)-2, (windowHeight/4)+2, windowWidth/2, windowHeight/2)
+	// // text(saying, -d-2, (-d/2)+2, d*2, d);
+ //  	// text(saying, (-windowWidth/2)-2, (-windowHeight/2)+2, windowWidth/2, windowHeight/2);
+
+	// pop()
+
+	// push()
+	// textFont("Palatino");
+	// textSize(d/6);
+	// fill(255);
+	// textAlign(CENTER, CENTER);
+	// text(saying, windowWidth/4, windowHeight/4, windowWidth/2, windowHeight/2)
+	// // text(saying, -d, -d/2, d*2, d);
+
+ //  	// text(saying, -windowWidth/2, -windowHeight/2, windowWidth/2, windowHeight/2);
+	// pop()
 }
 
 function initSlides(){
@@ -436,91 +551,64 @@ function initSlides(){
 
 function drawSlides() {
 	background(250)
+	// if (frameCount % 100 == 0){
+	// 	prev = next;
+	// 	// next = color(random(180, 250), random(180, 250), random(180, 250))
+	// 	next = color(random(200, 250), random(200, 250), random(200, 250));
+	// }
+	// Get the overall volume (between 0 and 1.0)
 	var vol = mic.getLevel();
 
 	var h = map(vol, 0, 1, windowHeight/2, 0);
 	noStroke();
 
 	push()
+	// image(slide, -h/4,- h/4, windowWidth + h/2, windowHeight + h/2)
 	image(slide, windowWidth/4 -h/4,windowHeight/4 - h/4, windowWidth/2 + h/2, windowHeight/2 + h/2)
+	// fill(randR, randG, randB, 40);
+	// rotate(radians(frameCount)/12)
+	// for (var i = 0; i < 10; i ++) {
+	// 	rect(0, 30, h, h);
+	// 	rotate(PI/5);// +radians(frameCount)/10)
+	// }
 	pop()
 
 }
 
-// function draw(){
-// 	// Randomly swap every 15 seconds
-// 	if (tick == (60*15)){
-// 		clear();
-// 		randomChange();
-// 		tick = 0;
-// 	}
-// 	if (sketch == 0){
-// 		drawBlob();
-// 	}else if (sketch == 1){
-// 		drawAudio();
-// 	}else if (sketch == 2){
-// 		drawBouncing();
-// 	}
+// function initVid(){
+// 	// var path = 'assets/vids/lotus_pinkpurple';
+// 	// // var path = assetPath;//getURL().replace("index.html", assetPath);
+// 	// vid = createVideo([path+".mov", path +".mp4", path+".webm"])
+// 	// // vid.position(0, 0);
+// 	// // vid.play();
+// 	// vid.loop();
+//   	// gif = loadImage(assets + '.gif');
 
-
-// 	tick += 1;
 // }
 
-function draw() {
-  background(250);
+// function drawVid(){
+// 	image(gif, 0, 0);
+// }
 
-	var vol = mic.getLevel();
+function draw(){
+	// Randomly swap every 15 seconds
+	if (tick == (60*15)){
+		clear();
+		randomChange();
+		tick = 0;
+	}
+	if (sketch == 0){
+		drawBlob();
+	}else if (sketch == 1){
+		drawAudio();
+	}else if (sketch == 2){
+		drawBouncing();
+	}else if (sketch == 3){
+		drawSlides()
+	}
 
-	var h = map(vol, 0, 1, windowHeight/2, 0);
 
-	translate(-240, -100, 0);
-	normalMaterial();
-	push();
-	rotateZ(frameCount * 0.01);
-	rotateX(frameCount * 0.01);
-	rotateY(frameCount * 0.01);
-	plane(70);
-	pop();
-
-	translate(240, 0, 0);
-	push();
-	rotateZ(frameCount * 0.01);
-	rotateX(frameCount * 0.01);
-	rotateY(frameCount * 0.01);
-	box(70, 70, 70);
-	pop();
-
-	translate(240, 0, 0);
-	push();
-	rotateZ(frameCount * 0.01);
-	rotateX(frameCount * 0.01);
-	rotateY(frameCount * 0.01);
-	cylinder(70, 70);
-	pop();
-
-	translate(-240 * 2, 200, 0);
-	push();
-	rotateZ(frameCount * 0.01);
-	rotateX(frameCount * 0.01);
-	rotateY(frameCount * 0.01);
-	cone(70, 70);
-	pop();
-
-	translate(240, 0, 0);
-	push();
-	rotateZ(frameCount * 0.01);
-	rotateX(frameCount * 0.01);
-	rotateY(frameCount * 0.01);
-	torus(70, 20);
-	pop();
-
-	translate(240, h, 0);
-	push();
-	rotateZ(frameCount * 0.01);
-	rotateX(frameCount * 0.01);
-	rotateY(frameCount * 0.01);
-	sphere(70);
-	pop();
+	tick += 1;
 }
 
 function initNew(){
@@ -531,6 +619,8 @@ function initNew(){
 		initAudio();
 	}else if (sketch == 2){
 		initBouncing();
+	}else if (sketch == 3){
+		initSlides();
 	}
 }
 
@@ -539,3 +629,17 @@ function randomChange(){
     saying = sayings[getRandomInt(0, sayings.length-1)];
     initNew();
 }
+
+// function keyPressed(){
+// 	clear()
+// 	if (keyCode === 49){
+// 		initAudio();
+// 		sketch = 1;
+// 	}else if (keyCode === 50){
+// 		initBlob()
+// 		sketch = 2;
+// 	}else if (keyCode === 51){
+// 		initBouncing();
+// 		sketch = 3;
+// 	}
+// }
